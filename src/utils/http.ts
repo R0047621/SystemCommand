@@ -50,6 +50,3 @@ http.interceptors.response.use(
 );
 
 export default http;
-// 通过dot env文件来定义坏境变量
-// .env.development
-// .env.production
