@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "echo \"No test command specified\""
   },
   "dependencies": {
     "ant-design-vue": "^4.0.0",
@@ -14,9 +15,12 @@
     "core-js": "^3.8.3",
     "dayjs": "^1.11.9",
     "register-service-worker": "^1.7.2",
+    "storejs": "^2.0.5",
     "vue": "^3.3.4",
+    "vue-drag-verify": "^1.0.6",
     "vue-request": "^2.0.3",
     "vue-router": "^4.0.3",
+    "vue3-puzzle-vcode": "^1.0.15",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
