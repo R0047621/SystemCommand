@@ -1,10 +1,20 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
+declare module "vue-router" {
+  interface RouteMeta {
+    id?: string;
+  }
+}
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Login",
     component: () => import("@/views/Login/LoginView.vue"),
+  },
+  {
+    path: "/projectManagement/Project/:id",
+    component: () => import("@/views/OverviewView.vue"),
   },
 ];
 
