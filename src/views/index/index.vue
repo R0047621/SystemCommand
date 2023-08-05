@@ -1,4 +1,4 @@
-<template><div>123456</div></template>
+<template><div></div></template>
 <script setup lang="ts"></script>
 
 <style scoped lang="scss"></style>

@@ -1,7 +1,6 @@
 import router from "@/router";
 import { list2tree } from "@/utils/buildMenuTree";
 import { RouteRecordRaw } from "vue-router";
-window.router = router;
 export default (menus: TLayout["data"]) => {
   const temp = menus.map((item) => {
     const path = (item.component as string).replace(/^views\//, "") + ".vue";

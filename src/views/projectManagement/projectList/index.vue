@@ -1,10 +1,9 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <text-vivw />
-  <text-vivwOne />
+  <div>
+    <leftMenu />
+  </div>
 </template>
-<script setup lang="ts">
-import textVivw from "./components/textView.vue";
-import textVivwOne from "./components/textViewOne.vue";
+<script lang="ts" setup>
+import leftMenu from "@/components/leftMenu.vue";
 </script>
-
-<style scoped lang="scss"></style>
