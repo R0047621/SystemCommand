@@ -271,8 +271,9 @@
                   ),
                     runDataDepartmentName()
                 "
-                >编辑</a-button
               >
+                编辑
+              </a-button>
             </a-form-item>
           </a-form>
         </a-drawer>
@@ -281,7 +282,7 @@
           v-model:open="openUserInf"
           :closable="false"
           class="custom-class titleLocation"
-          height="605px"
+          height="655px"
           placement="top"
           :title="`${departmentUSerInf?.username}详细信息`"
         >
@@ -491,7 +492,7 @@ onMounted(() => {
 });
 </script>
 <style>
-.departmentManagement .ant-drawer-content-wrapper {
+.ant-drawer-content-wrapper {
   width: 460px !important;
   margin: 5% auto !important;
 }
@@ -499,6 +500,7 @@ onMounted(() => {
   display: flex !important;
   align-items: center !important;
 }
+
 .departmentManagement .ant-menu-item {
   padding-left: 10px !important;
   border-radius: 0 !important;
@@ -521,10 +523,13 @@ onMounted(() => {
   padding-inline-start: 8px !important;
   padding-inline-end: 8px !important;
 }
-.departmentManagement .ant-btn-primary {
+.ant-btn-primary {
   background-color: #1677ff !important;
 }
-.departmentManagement .departmentManagement .titleLocation .ant-drawer-title {
+.ant-btn-default {
+  display: inline-block;
+}
+.titleLocation .ant-drawer-title {
   text-align: center;
 }
 .departmentManagement span {
