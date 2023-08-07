@@ -297,7 +297,7 @@ const handleOk = () => {
               class: "globalPrompt",
             });
           },
-        },
+        }
       );
     }
   }, 500);
@@ -330,7 +330,7 @@ const Determine = () => {
             class: "globalPrompt",
           });
         },
-      },
+      }
     );
   }
 };

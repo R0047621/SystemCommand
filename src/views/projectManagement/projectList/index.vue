@@ -141,7 +141,7 @@ import informationView from "./components/InformationView.vue";
 import { project_templatesList } from "@/service";
 
 const { data: DataProject_templatesList } = useRequest(() =>
-  project_templatesList({ limit: 1000, offset: 0 }),
+  project_templatesList({ limit: 1000, offset: 0 })
 );
 console.log(DataProject_templatesList);
 
@@ -164,7 +164,7 @@ const activeKey = ref(1);
 // console.log(route);
 watch([route], () => {
   activeKey.value = Number(
-    route.path.replace("/projectManagement/ProjectLists/ProjectList/", ""),
+    route.path.replace("/projectManagement/ProjectLists/ProjectList/", "")
   );
 });
 

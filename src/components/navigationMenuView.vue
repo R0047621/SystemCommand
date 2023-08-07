@@ -56,7 +56,28 @@
           项目</a-menu-item
         >
         <a-menu-item @click="onMenuItemDepartment" key="3">
-          <svg xmlns="http://www.w3.org/2000/svg"   class="mr-[5px]" width="16" height="16" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="4"><path d="M5 37a2 2 0 0 1 2-2h34a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-5Z"/><path d="M5 31a2 2 0 0 1 2-2h34a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V31Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M18.763 15.664a1 1 0 0 1 .942-.664h8.59a1 1 0 0 1 .942.664L34 29H14l4.763-13.336Z"/><rect width="18" height="10.8" x="15" y="4" rx="5.4"/></g></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mr-[5px]"
+            width="16"
+            height="16"
+            viewBox="0 0 48 48"
+          >
+            <g fill="none" stroke="currentColor" stroke-width="4">
+              <path
+                d="M5 37a2 2 0 0 1 2-2h34a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-5Z"
+              />
+              <path
+                d="M5 31a2 2 0 0 1 2-2h34a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V31Z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M18.763 15.664a1 1 0 0 1 .942-.664h8.59a1 1 0 0 1 .942.664L34 29H14l4.763-13.336Z"
+              />
+              <rect width="18" height="10.8" x="15" y="4" rx="5.4" />
+            </g>
+          </svg>
           部门</a-menu-item
         >
       </a-menu>
@@ -214,7 +235,7 @@ const onMenuItemProject = function () {
 
 const onMenuItemDepartment = function () {
   selectedKeys.value = ["3"];
-
+  router.push("/departmentManagement/departmentManagement");
 };
 
 // 接收路由数据
@@ -237,7 +258,7 @@ watch(
   },
   {
     immediate: true,
-  },
+  }
 );
 
 // 退出登录 弹出框

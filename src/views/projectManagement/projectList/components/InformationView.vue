@@ -143,7 +143,7 @@ const { data: dataUpLoadFileRecord, run: runUpLoadFileRecord } = useRequest(
   (formData) => upLoadFileRecord(formData),
   {
     manual: true,
-  },
+  }
 );
 const formData = new FormData();
 const imagePath = ref("");

@@ -135,7 +135,7 @@ const customTemplate = ref([
 ]);
 
 const { data: project_templates } = useRequest(() =>
-  featProject_templates({ is_custom: 1, limit: 1000, offset: 0 }),
+  featProject_templates({ is_custom: 1, limit: 1000, offset: 0 })
 );
 const routerProjectTemplate = ref((index: number) => {
   numIndex.value = index;

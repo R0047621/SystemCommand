@@ -227,7 +227,7 @@ const arrAxios = [
 watch([route], () => {
   // console.log(route.path);
   routeNum.value = Number(
-    route.path.replace("/projectManagement/ProjectLists/ProjectList/", ""),
+    route.path.replace("/projectManagement/ProjectLists/ProjectList/", "")
   );
   console.log(routeNum.value);
 
@@ -239,16 +239,13 @@ const { data: ProjectsList, run: runFeatProjectsList } = useRequest(
     featProjectsList(
       arrAxios[
         Number(
-          route.path.replace(
-            "/projectManagement/ProjectLists/ProjectList/",
-            "",
-          ),
+          route.path.replace("/projectManagement/ProjectLists/ProjectList/", "")
         ) - 1
-      ],
+      ]
     ),
   {
     manual: true,
-  },
+  }
 );
 // 点击收藏
 const Collection_ID = ref(0);
@@ -258,7 +255,7 @@ const { run: runFeat_Project_Collects } = useRequest(
   () => feat_project_collects({ project_id: Collection_ID.value, user_id: 56 }),
   {
     manual: true,
-  },
+  }
 );
 
 const isCollection = ref((index: number) => {
