@@ -59,3 +59,57 @@ export const OverviewDetails = async (params: {
 //菜单路由
 export const GetUserMenus = async () =>
   (await http.get<TLayout>("/api/v1/menus/user_menus")).data.data;
+//头部
+export const userInformation = async () =>
+    (await http.get<TUserInformation>("/api/v1/users/user_info")).data;
+// 项目模板
+export const featProject_templates = async (params: {
+  is_custom: number;
+  limit: number;
+  offset: number;
+}) =>
+    (
+        await http.get<ResponseDataRows>("/api/v1/project_templates/list", {params,})
+    ).data.data.rows;
+// 全部项目
+export const featProjectsList = async (
+    params: | { collection: number; is_recycle: number; } | { collection: number; is_archived: number;
+    },
+) =>
+    (
+        await http.get<ResponseDataRows>("/api/v1/projects/list", {
+          params,
+        })
+    ).data.data.rows;
+// 收藏
+export const feat_project_collects = async (data: {
+  project_id: number | undefined;
+  user_id: 56;
+}) =>
+    (await http.post<IBaseResponse>("/api/v1/user_project_collects/change", data))
+        .data.data;
+// 上传图片
+export const upLoadFileRecord = async (data: FormData) =>
+    (
+        await http.post<ResponseData_1>("/api/v1/uploads", data, {
+          headers: {
+            "Content-Type": "multipart/form-data;",
+          },
+        })
+    ).data.data;
+// 修改项目信息
+export const project_templatesList = async (params: {
+  limit: number;
+  offset: number;
+}) =>
+    (
+        await http.get<Project_templatesList>("/api/v1/project_templates/list", {
+          params,
+        })
+    ).data.data.rows;
+// 个人信息
+export const featUser_info = async () =>
+    (await http.get<TUser_info>("/api/v1/users/user_info")).data.data;
+// 修改项目信息
+export const ModifyProjectInformation = async (data: TsungCurrentData) =>
+    await http.put<IBaseResponse>("/api/v1/projects", data);

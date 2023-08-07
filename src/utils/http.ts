@@ -25,7 +25,7 @@ http.interceptors.request.use(
 // 添加响应拦截器
 http.interceptors.response.use(
   (option) => {
-    const url2Handler: Record<string, () => any> = {
+      const url2Handler: Record<string, () => any> = {
       "/api/v1/users/login": () => store.set("arco_auth", option.data.data),
     };
     url2Handler[option?.config?.url ?? ""]?.();

@@ -1,4 +1,10 @@
-<template><div>123456</div></template>
-<script setup lang="ts"></script>
+<template>
+  <div>首页</div>
+</template>
+<script lang="ts" setup>
 
-<style scoped lang="scss"></style>
+
+</script>
+<style scoped>
+
+</style>

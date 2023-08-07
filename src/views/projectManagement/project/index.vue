@@ -205,7 +205,7 @@ const createChartOption = (
   };
 };
 const route = useRoute();
-console.log(route.params);
+console.log("route.params", route.params);
 async function showSizeChange() {
   const res1 = await OverviewDetails({
     project_id: route.params.id as string,
