@@ -149,3 +149,65 @@ export const DepartmentSort = async (data: {
   created_at?: string;
   updated_at?: string;
 }) => await http.put("api/v1/departments", data);
+
+// 获取用户信息
+export const UserInformation = async () =>
+  (await http.get<IBaseResponse<UserInforData>>("/api/v1/users/user_info")).data
+    .data;
+
+// 获取项目数量
+export const ProjectNumber = async (params: {
+  is_recycle: number;
+  is_archived: number;
+  is_private: number;
+}) =>
+  (
+    await http.get<IBaseResponse<ProjectData>>("/api/v1/projects/list", {
+      params,
+    })
+  ).data.data.rows;
+
+// 获取我的任务数据
+export const MyAssignment = async (params: TMyAssignmentParams) =>
+  (
+    await http.get<TMyAssignment>("/api/v1/tasks/list", {
+      params,
+    })
+  ).data.data;
+
+// 获取用户项目数据
+export const UserFileName = async (params: { project_id: number }) =>
+  (await http.get<TUserFileName>("/api/v1/users/list", { params })).data.data;
+
+// 获取文件内部数据
+export const FileCreate = async (params: {
+  project_id: number;
+  prop_order: string;
+  order: string;
+}) =>
+  (await http.get<TFileCreate>("/api/v1/project_files/list", { params })).data
+    .data;
+
+// 上传文件数据请求
+export const UploadFile = async (fd: FormData) =>
+  (
+    await http.post<IBaseResponse<IUploadData>>("/api/v1/uploads", fd, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+  ).data.data;
+
+// 上传图片数据请求
+export const ImgProjectFiles = async (params: IdataUrl) =>
+  await http.post<IBaseResponse<ImgProjectRootObject>>(
+    "/api/v1/project_files",
+    params
+  );
+
+// 将数据移入回收站
+export const deleteProjectFiles = async (params: IdeleteFiles) =>
+  await http.put<IBaseResponse<ImgProjectRootObject>>(
+    "/api/v1/project_files",
+    params
+  );
